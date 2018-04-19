@@ -15,7 +15,7 @@ def union_unencoding_txt(list):
 text = union_unencoding_txt(['allnews.txt', 'newsafr.txt', 'newscy.txt', 'newsfr.txt', 'newsit.txt'])
 
 
-def get_top_six_words(text):
+def get_top_ten_words(text):
     list = text.lower().split(' ')
     words = []
     for i in list:
@@ -29,9 +29,9 @@ def get_top_six_words(text):
             dct[i] = 1
     sorted_dtc = sorted(dct.items(), key=lambda x: x[1], reverse = True)
     i = 0
-    while i < 6:
-        print('Слово "{}" упоменалось {} раз'.format(sorted_dtc[i][0], sorted_dtc[i][1]))
+    while i < 10:
+        print('Слово "{}" упоминалось {} раз'.format(sorted_dtc[i][0], sorted_dtc[i][1]))
         i += 1
 
 
-get_top_six_words(text)
+get_top_ten_words(text)
